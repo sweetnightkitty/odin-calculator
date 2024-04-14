@@ -72,8 +72,13 @@ numberButtons.forEach((button) => {
 
 operators.forEach((option) => {
     option.addEventListener("click", () => {
+        if(toggleStatus === "second") {
+            firstNumber = runOperation(firstNumber, secondNumber, operator);
+            display.textContent = firstNumber;
+        } else if(toggleStatus === "first") {
+            switchToggleStatus();
+        };
         operator = option.id;
-        switchToggleStatus();
         currentNumber = "reset";
 
     })
