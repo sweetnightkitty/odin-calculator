@@ -8,6 +8,7 @@ const display = document.querySelector("#screen");
 const clear = document.querySelector("#clear");
 const numberButtons = document.querySelectorAll(".num");
 const operators = document.querySelectorAll(".operator");
+const equals = document.querySelector("#equals");
 
 function add(a, b) {
     return a + b;
@@ -77,3 +78,6 @@ function assignCurrentNumber(currentNumber) {
     };
 };
 
+equals.addEventListener("click", () => {
+    display.textContent = runOperation(firstNumber, secondNumber, operator);
+});
