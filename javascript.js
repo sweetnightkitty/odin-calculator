@@ -2,6 +2,7 @@ let firstNumber;
 let secondNumber;
 const display = document.querySelector("#screen");
 const clear = document.querySelector("#clear");
+const numberButtons = document.querySelectorAll(".num");
 
 function add(a, b) {
     return a + b;
@@ -35,3 +36,9 @@ clear.addEventListener("click", () => {
     display.textContent = 0;
 });
 
+
+numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        display.textContent = button.textContent;
+    })
+})
