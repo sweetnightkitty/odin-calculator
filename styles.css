@@ -16,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-.screen {
+#screen {
     display: flex;
     justify-content: right;
     align-items: center;
@@ -29,7 +29,7 @@ body {
     display: flex;
 }
 
-.zero {
+#zero {
     flex-grow: 1;
 }
 
