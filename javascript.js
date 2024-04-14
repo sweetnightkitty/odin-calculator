@@ -47,12 +47,18 @@ clear.addEventListener("click", () => {
     }
 });
 
+clear.addEventListener("dblclick", () => {
+    display.textContent = 0;
+    firstNumber = 0;
+    secondNumber = 0;
+    operator = undefined;
+})
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         let newValue = button.textContent;
 
-        if(display.textContent == 0) {
+        if(display.textContent == 0 || currentNumber === "reset") {
             display.textContent = newValue;
             currentNumber = newValue;
         } else {
@@ -68,6 +74,7 @@ operators.forEach((option) => {
     option.addEventListener("click", () => {
         operator = option.id;
         switchToggleStatus();
+        currentNumber = "reset";
 
     })
 });
