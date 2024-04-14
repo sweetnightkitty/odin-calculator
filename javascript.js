@@ -1,8 +1,11 @@
 let firstNumber;
 let secondNumber;
+let operator;
+
 const display = document.querySelector("#screen");
 const clear = document.querySelector("#clear");
 const numberButtons = document.querySelectorAll(".num");
+const operators = document.querySelectorAll(".operator");
 
 function add(a, b) {
     return a + b;
@@ -48,5 +51,11 @@ numberButtons.forEach((button) => {
             display.textContent += newValue;
             firstNumber += newValue;
         };
+    })
+});
+
+operators.forEach((option) => {
+    option.addEventListener("click", () => {
+        operator = option.id;
     })
 });
