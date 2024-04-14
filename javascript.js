@@ -67,10 +67,14 @@ numberButtons.forEach((button) => {
 operators.forEach((option) => {
     option.addEventListener("click", () => {
         operator = option.id;
+        switchToggleStatus();
+
     })
 });
 
 function assignCurrentNumber(currentNumber) {
+    //currentNumber is passed to the function as a string
+    currentNumber = parseInt(currentNumber); 
     if(toggleStatus === "first") {
         firstNumber = currentNumber;
     } else if(toggleStatus === "second") {
@@ -81,3 +85,11 @@ function assignCurrentNumber(currentNumber) {
 equals.addEventListener("click", () => {
     display.textContent = runOperation(firstNumber, secondNumber, operator);
 });
+
+function switchToggleStatus() {
+    if(toggleStatus === "first") {
+        toggleStatus = "second";
+    } else if(toggleStatus === "second") {
+        toggleStatus = "first";
+    };
+};
