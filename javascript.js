@@ -1,5 +1,7 @@
 let firstNumber;
 let secondNumber;
+const display = document.querySelector(".screen");
+const clear = document.querySelector(".clear");
 
 function add(a, b) {
     return a + b;
@@ -29,3 +31,6 @@ function runOperation(firstNumber, secondNumber, operator) {
     };
 };
 
+clear.addEventListener("click", () => {
+    display.textContent = 0;
+});
