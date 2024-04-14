@@ -34,11 +34,19 @@ function runOperation(firstNumber, secondNumber, operator) {
 
 clear.addEventListener("click", () => {
     display.textContent = 0;
+    firstNumber = 0;
 });
 
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        display.textContent = button.textContent;
+        let newValue = button.textContent;
+        if(display.textContent == 0) {
+            display.textContent = newValue;
+            firstNumber = newValue;
+        } else {
+            display.textContent += newValue;
+            firstNumber += newValue;
+        };
     })
-})
+});
