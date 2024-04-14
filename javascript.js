@@ -1,6 +1,8 @@
 let firstNumber;
 let secondNumber;
 let operator;
+let currentNumber;
+let toggleStatus = "first";
 
 const display = document.querySelector("#screen");
 const clear = document.querySelector("#clear");
@@ -37,20 +39,27 @@ function runOperation(firstNumber, secondNumber, operator) {
 
 clear.addEventListener("click", () => {
     display.textContent = 0;
-    firstNumber = 0;
+    if(toggleStatus === "first") {
+        firstNumber = 0;
+    } else if(toggleStatus === "second") {
+        secondNumber = 0;
+    }
 });
 
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         let newValue = button.textContent;
+
         if(display.textContent == 0) {
             display.textContent = newValue;
-            firstNumber = newValue;
+            currentNumber = newValue;
         } else {
             display.textContent += newValue;
-            firstNumber += newValue;
+            currentNumber += newValue;
         };
+
+        assignCurrentNumber(currentNumber);
     })
 });
 
@@ -59,3 +68,12 @@ operators.forEach((option) => {
         operator = option.id;
     })
 });
+
+function assignCurrentNumber(currentNumber) {
+    if(toggleStatus === "first") {
+        firstNumber = currentNumber;
+    } else if(toggleStatus === "second") {
+        secondNumber = currentNumber;
+    };
+};
+
