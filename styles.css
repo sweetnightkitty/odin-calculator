@@ -1,4 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,11 +14,23 @@ body {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-};
+}
 
+.screen {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 30px;
+    height: 25px;
+    padding: 5px 10px;
+}
 
 .row-one, .row-two, .row-three, .row-four, .row-five {
     display: flex;
+}
+
+.zero {
+    flex-grow: 1;
 }
 
 button {
